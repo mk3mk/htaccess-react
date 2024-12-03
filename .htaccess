@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Исключаем статические файлы и директории
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Перенаправление всех остальных запросов на index.html
+RewriteRule . /index.html [L]
+</IfModule>
